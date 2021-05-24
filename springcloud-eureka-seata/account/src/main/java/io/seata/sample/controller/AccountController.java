@@ -20,4 +20,9 @@ public class AccountController {
         accountService.reduce(userId, money);
         return true;
     }
+
+    @RequestMapping(value = "/enoughmoney",produces = "application/json")
+    public Boolean enoughMoney(String userId,Integer cost){
+        return accountService.enoughMoney(userId,cost);
+    }
 }

@@ -15,4 +15,7 @@ public interface StorageFeignClient {
     void deduct(@RequestParam("commodityCode") String commodityCode,
                 @RequestParam("count") Integer count);
 
+    @GetMapping("/enoughstorage")
+    Boolean enoughStorage(@RequestParam("commodityCode")String commodityCode,@RequestParam("orderCount") Integer orderCount);
+
 }

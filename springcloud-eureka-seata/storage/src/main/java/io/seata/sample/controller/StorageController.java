@@ -20,4 +20,10 @@ public class StorageController {
         storageService.deduct(commodityCode, count);
         return true;
     }
+
+    @RequestMapping(value = "/enoughstorage", produces = "application/json")
+    public Boolean enoughStorage(String commodityCode, Integer orderCount) {
+        storageService.enoughStorage(commodityCode, orderCount);
+        return true;
+    }
 }
